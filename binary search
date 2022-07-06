@@ -1,0 +1,21 @@
+def binary_search(elements, search_item):
+
+    left = 0
+    right = len(elements) - 1
+    while left <= right:
+        middle_index = (left + right) // 2
+        middle_element = elements[middle_index]
+
+        if middle_element == search_item:
+            return middle_index
+
+        if middle_element < search_item:
+            left = middle_index + 1
+        elif middle_element > search_item:
+            right = middle_index - 1
+
+    return None
+
+
+print(binary_search(
+    [1,2,3,4,5,6,7,8,9,10], 8))
